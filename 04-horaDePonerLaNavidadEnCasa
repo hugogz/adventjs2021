@@ -1,0 +1,33 @@
+export default function createXmasTree(height) {
+  // ¡Y no olvides también poner los turrones!
+  let res = '';
+  const width = height * 2 - 1;
+  let treeWidth = 1;
+  for (let i = 0; i<height; i++) {
+    for (let j = 0; j<(width - treeWidth)/2; j++){
+      res = res + '_';
+    }
+    for (let j = 0; j<treeWidth; j++){
+      res = res + '*';
+    }
+    for (let j = 0; j<(width - treeWidth)/2; j++){
+      res = res + '_';
+    }
+    treeWidth = treeWidth + 2;
+    res = res + '\n';
+  }
+  for (let i = 0; i<2; i++) {
+    for (let j = 0; j<(width - 1)/2; j++){
+      res = res + '_';
+    }
+      res = res + '#';
+    for (let j = 0; j<(width - 1)/2; j++){
+    res = res + '_';
+    }
+    if (i == 0){
+      res = res + '\n'; 
+    }
+  }
+  console.log(res);
+  return res;
+}
